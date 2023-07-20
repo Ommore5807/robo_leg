@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robo_leg">
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="0.00468211118343995 8.02074076933224E-07 1.44345016779328"
+        rpy="0 0 0" />
+      <mass
+        value="760.637011705538" />
+      <inertia
+        ixx="548.979952619106"
+        ixy="2.9572452853585E-06"
+        ixz="0.70108307139235"
+        iyy="819.608093662225"
+        iyz="-0.0006644896818472"
+        izz="326.652818866655" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="hinge_UU">
+    <inertial>
+      <origin
+        xyz="-0.000588001226960427 -0.0538797737282969 0.0040775821785497"
+        rpy="0 0 0" />
+      <mass
+        value="0.0124075021216369" />
+      <inertia
+        ixx="2.1547530224451E-05"
+        ixy="4.08560226266882E-09"
+        ixz="3.50399838282756E-11"
+        iyy="2.48420344050436E-06"
+        iyz="4.38826489428055E-07"
+        izz="2.39156461358384E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/hinge_UU.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/hinge_UU.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hinge_UU_j"
+    type="fixed">
+    <origin
+      xyz="0.000591115875000159 -0.336809806641101 2.52518148974062"
+      rpy="0 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="hinge_UU" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hinge_UL">
+    <inertial>
+      <origin
+        xyz="-0.000350068636117778 0.0187349879184172 -0.0407234626928345"
+        rpy="0 0 0" />
+      <mass
+        value="0.0149562489565383" />
+      <inertia
+        ixx="2.77383053237888E-05"
+        ixy="6.53538296214272E-08"
+        ixz="-1.41295179953695E-07"
+        iyy="2.61494686866995E-05"
+        iyz="9.67139193493288E-06"
+        izz="6.47198136297428E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/hinge_UL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/hinge_UL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hinge_UL_j"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="hinge_UU" />
+    <child
+      link="hinge_UL" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0.349"
+      upper="-0.349"
+      effort="100"
+      velocity="2" />
+  </joint>
+  <link
+    name="tube_upper">
+    <inertial>
+      <origin
+        xyz="1.39309443702995E-08 -0.000642623368306866 0.00173034700918451"
+        rpy="0 0 0" />
+      <mass
+        value="0.182771131041888" />
+      <inertia
+        ixx="0.0288040348348787"
+        ixy="1.02559628783341E-10"
+        ixz="9.55764880392193E-10"
+        iyy="0.0253156864476515"
+        iyz="0.0093895125146079"
+        izz="0.00352488883961342" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/tube_upper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/tube_upper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tube_upper_j"
+    type="fixed">
+    <origin
+      xyz="-0.000590088374999936 0.252035396430084 -0.660642634271047"
+      rpy="0 0 0" />
+    <parent
+      link="hinge_UL" />
+    <child
+      link="tube_upper" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hinge_LU">
+    <inertial>
+      <origin
+        xyz="-0.000588084340786471 -0.0149379000005746 0.0519264306817591"
+        rpy="0 0 0" />
+      <mass
+        value="0.0124080543656935" />
+      <inertia
+        ixx="2.15480311497024E-05"
+        ixy="1.42460075635426E-09"
+        ixz="-3.74261469269207E-09"
+        iyy="2.16045137326289E-05"
+        iyz="6.66316689173814E-06"
+        izz="4.79656409042026E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/hinge_LU.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/hinge_LU.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hinge_LU_j"
+    type="fixed">
+    <origin
+      xyz="0.000589745875000963 0.240357925630607 -0.664980149220171"
+      rpy="0 0 0" />
+    <parent
+      link="tube_upper" />
+    <child
+      link="hinge_LU" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="hinge_LL">
+    <inertial>
+      <origin
+        xyz="-0.000349162331473335 -0.022221144798599 -0.0389713358298034"
+        rpy="0 0 0" />
+      <mass
+        value="0.0149300118627521" />
+      <inertia
+        ixx="2.77317575100482E-05"
+        ixy="-7.69471635965688E-08"
+        ixz="-1.35726947664107E-07"
+        iyy="2.22963747944033E-05"
+        iyz="-1.24251026830735E-05"
+        izz="1.03187743356264E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/hinge_LL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/hinge_LL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hinge_LL_j"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="hinge_LU" />
+    <child
+      link="hinge_LL" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0.349"
+      upper="-0.349"
+      effort="100"
+      velocity="2" />
+  </joint>
+  <link
+    name="tube_lower">
+    <inertial>
+      <origin
+        xyz="-1.46219117647117E-08 -0.00513048443543922 -0.00759988268326084"
+        rpy="0 0 0" />
+      <mass
+        value="0.185067675197668" />
+      <inertia
+        ixx="0.029707829187277"
+        ixy="1.92332160440707E-09"
+        ixz="-3.37902686525801E-10"
+        iyy="0.0204240923383546"
+        iyz="-0.0137570481564351"
+        izz="0.00932114604754061" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/tube_lower.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/tube_lower.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tube_lower_j"
+    type="fixed">
+    <origin
+      xyz="-0.00059077337500113 -0.390345036110258 -0.58957722566556"
+      rpy="0 0 0" />
+    <parent
+      link="hinge_LL" />
+    <child
+      link="tube_lower" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="leg support ">
+    <inertial>
+      <origin
+        xyz="-7.21644966006352E-16 -4.9222527990056E-05 -7.29412373186022E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00526659250823865" />
+      <inertia
+        ixx="1.57167590827307E-06"
+        ixy="6.98764716172854E-23"
+        ixz="1.03549426819276E-22"
+        iyy="1.66436600986042E-06"
+        iyz="1.37354397942885E-07"
+        izz="1.77521685073793E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/leg support .STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robo_leg/meshes/leg support .STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg support _j"
+    type="fixed">
+    <origin
+      xyz="0 -0.398049308609462 -0.589856114075886"
+      rpy="0 0 0" />
+    <parent
+      link="tube_lower" />
+    <child
+      link="leg support " />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
